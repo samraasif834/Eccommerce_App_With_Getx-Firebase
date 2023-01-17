@@ -1,4 +1,4 @@
-# ecommerceappfirebase
+# EcommerceAppFirebase
 
 A new Flutter project.
 
