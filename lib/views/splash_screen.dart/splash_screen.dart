@@ -1,10 +1,8 @@
-
-import 'package:ecommerceappfirebase/constants/colors.dart';
 import 'package:ecommerceappfirebase/constants/consts.dart';
+import 'package:ecommerceappfirebase/views/auth_screen/login_screen.dart';
 import 'package:ecommerceappfirebase/widgets_common/applogo_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,6 +12,20 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+// creating method for screen changing
+
+  changeScreen() async {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(() => const LoginScreen());
+    });
+  }
+
+  @override
+  void initState() {
+    changeScreen();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,12 +61,10 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             const Spacer(),
             const Text(credits,
-                style: TextStyle(
-                  color: whiteColor,
-                  fontFamily: semibold
-                
-                )),
-                const SizedBox(height: 30,)
+                style: TextStyle(color: whiteColor, fontFamily: semibold)),
+            const SizedBox(
+              height: 30,
+            )
           ],
         )));
   }

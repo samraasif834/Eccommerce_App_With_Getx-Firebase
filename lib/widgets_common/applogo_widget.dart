@@ -11,9 +11,9 @@ Widget applogo_widget() {
       decoration: BoxDecoration(
          color: whiteColor,
           border: Border.all(
-            
+            color: Colors.transparent
           ),
-          borderRadius: BorderRadius.all(Radius.circular(10))),
+          borderRadius: const BorderRadius.all(Radius.circular(10))),
       
       child: Image.asset(
         icAppLogo,
