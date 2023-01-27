@@ -1,6 +1,6 @@
 import 'package:ecommerceappfirebase/constants/consts.dart';
 
-Widget ourButton({String? name, VoidCallback? onPressed,color ,textcolor}) {
+Widget ourButton({String? name, VoidCallback? onPressed,Color? color ,textcolor}) {
   return ElevatedButton(
     style: ButtonStyle(
      minimumSize: MaterialStateProperty.all(Size(300, 30)),

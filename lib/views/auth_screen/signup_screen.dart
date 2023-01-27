@@ -15,9 +15,11 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  bool isfalse = false;
+
   @override
   Widget build(BuildContext context) {
-     var height = MediaQuery.of(context).size.height;
+    var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.height;
 
     return bgWidget(
@@ -28,7 +30,6 @@ class _SignupScreenState extends State<SignupScreen> {
           SizedBox(height: height * 0.1),
           applogo_widget(),
           const SizedBox(height: 10),
-         
           const SizedBox(height: 15),
           Container(
             width: width * 0.4,
@@ -63,79 +64,123 @@ class _SignupScreenState extends State<SignupScreen> {
                   const SizedBox(
                     height: 5,
                   ),
-                   customTextField(title: password, hintText: passwordHint),
-                    customTextField(title: retypePassowrd, hintText: retypePassowrd),
-                      Align(
+                  customTextField(title: password, hintText: passwordHint),
+                  customTextField(
+                      title: retypePassowrd, hintText: retypePassowrd),
+                  Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
                           onPressed: () {},
                           child: const Text(
                             forgotPassword,
                           ))),
+                  Row(
+                    children: [
+                      Checkbox(
+                          activeColor: Colors.red,
+                          checkColor: whiteColor,
+                          value: isfalse,
+                          onChanged: (newValue) {
+                            setState(() {
+                              isfalse = newValue!;
+                            });
+                          }),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Expanded(
+                        child: RichText(
+                          text: const TextSpan(children: [
+                            TextSpan(
+                                text: "I agree to the ",
+                                style: TextStyle(
+                                    color: fontGrey, fontFamily: regular)),
+                            TextSpan(
+                                text: termsAndConditions,
+                                style: TextStyle(
+                                    color: redColor, fontFamily: regular)),
+                            TextSpan(
+                                text: " &  ",
+                                style: TextStyle(
+                                    color: fontGrey, fontFamily: regular)),
+                            TextSpan(
+                                text: "$privacyPolicy",
+                                style: TextStyle(
+                                    color: redColor, fontFamily: regular)),
+                          ]),
+                        ),
+                      )
+                    ],
+                  ),
                   ourButton(
                       name: signup,
                       onPressed: () {},
-                      color: redColor,
+                      color: isfalse ? redColor : lightGrey,
                       textcolor: whiteColor),
                   const SizedBox(
                     height: 5,
                   ),
-                
-                Row(
-                  children: [
-                   Checkbox(
-                    checkColor: redColor,
-                    value: false, onChanged: (newValue){}),
-                    SizedBox(width: 5,),
-                     Expanded(
-                       child: RichText(
-                            text: TextSpan(children: [
-                          TextSpan(
-                              text: "I agree to the ",
-                              style:
-                                  TextStyle(color: fontGrey, fontFamily: bold)),
-                          TextSpan(
-                              text: termsAndConditions,
-                              style:
-                                  TextStyle(color: redColor, fontFamily: bold)),
-                        TextSpan(
-                                text: " & $privacyPolicy",
-                                style: TextStyle(
-                                    color: redColor, fontFamily: bold)),
-                        ]),
-                        
-                        ),
-                     )
-                  ],
-                ),
 
-                SizedBox(height: 10,),
-                GestureDetector(
-                  onTap: (){
-                    Get.back();
-                  },
-                  child: RichText(text: TextSpan(
+                  // Row(
+                  //   children: [
+                  //    Checkbox(
+                  //     checkColor: redColor,
+                  //     value: isfalse, onChanged: (newValue){
+                  //       setState(() {
+                  //           isfalse = newValue!;
+                  //       });
+
+                  //     }),
+                  //     const SizedBox(width: 5,),
+                  //      Expanded(
+                  //        child: RichText(
+                  //             text: const TextSpan(children: [
+                  //           TextSpan(
+                  //               text: "I agree to the ",
+                  //               style:
+                  //                   TextStyle(color: fontGrey, fontFamily: regular)),
+                  //           TextSpan(
+                  //               text: termsAndConditions,
+                  //               style:
+                  //                   TextStyle(color: redColor, fontFamily: regular)),
+                  //                    TextSpan(
+                  //                 text: " &  ",
+                  //                 style: TextStyle(
+                  //                     color: fontGrey, fontFamily: regular)),
+                  //         TextSpan(
+                  //                 text: "$privacyPolicy",
+                  //                 style: TextStyle(
+                  //                     color: redColor, fontFamily: regular)),
+                  //         ]),
+
+                  //         ),
+                  //      )
+                  //   ],
+                  // ),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      TextSpan(
-                        text: alreadyHaveAnAccount,
-                       
-                        style: TextStyle(fontFamily: bold,
-                            color: fontGrey,
-                          )
+                     Text(
+                       alreadyHaveAnAccount,
+                        style: TextStyle(color: fontGrey,),
                       ),
-                       TextSpan(
-                          text: login,
-                          style: TextStyle(
-                            fontFamily: bold,
-                            color: redColor,
+                      TextButton(
+                          onPressed: () {
+                            Get.back();
+                          },
+                          child: const Text(
+                            login,
+                            style: TextStyle(
+                                color: redColor,),
                           ))
-                    ]
-                  )),
-                )
+                    ],
+                  ),
 
-                // SizedBox(width: 10,),
-               
-                  
+                  // SizedBox(width: 10,),
                 ],
               ),
             ),
