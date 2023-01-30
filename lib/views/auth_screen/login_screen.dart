@@ -1,6 +1,7 @@
 import 'package:ecommerceappfirebase/constants/consts.dart';
 import 'package:ecommerceappfirebase/constants/lists.dart';
 import 'package:ecommerceappfirebase/views/auth_screen/signup_screen.dart';
+import 'package:ecommerceappfirebase/views/home_screen/home_screen.dart';
 import 'package:ecommerceappfirebase/widgets_common/applogo_widget.dart';
 import 'package:ecommerceappfirebase/widgets_common/bg_widget.dart';
 import 'package:ecommerceappfirebase/widgets_common/custome_textfield.dart';
@@ -65,7 +66,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                   ourButton(
                       name: login,
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => const HomeScreen());
+                      },
                       color: redColor,
                       textcolor: whiteColor),
                   const SizedBox(
