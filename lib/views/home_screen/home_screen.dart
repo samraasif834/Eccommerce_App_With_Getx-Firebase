@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 
 import '../../controllers/home_controller.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) { 
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             icProfile,
             width: 26,
           ),
-          label: icProfile),
+          label: account),
     ];
 
     var navBody = [

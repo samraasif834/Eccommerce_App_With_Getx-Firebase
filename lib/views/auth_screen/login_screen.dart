@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                   ourButton(
                       name: login,
                       onPressed: () {
-                        Get.to(() => const HomeScreen());
+                        Get.to(() => const Home());
                       },
                       color: redColor,
                       textcolor: whiteColor),
