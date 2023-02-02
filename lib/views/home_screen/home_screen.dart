@@ -12,6 +12,25 @@ class HomeScreen extends StatelessWidget {
       color: lightGrey,
       height: height,
       width: width,
+      child: SafeArea(child: Column(
+        children: [
+          Container(
+            color: lightGrey,
+            child: TextFormField(
+              decoration:InputDecoration(
+                // hintText: search,
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide.none,
+                ),
+                filled: true,
+                fillColor: Colors.white,
+              ),
+            ),
+          )
+        ],
+      )),
 
     );
   }
