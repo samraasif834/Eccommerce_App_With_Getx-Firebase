@@ -5,8 +5,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.height;
     return Container(
-      color: Colors.blue,
+      padding: const EdgeInsets.all(12),
+      color: lightGrey,
+      height: height,
+      width: width,
+
     );
   }
 }
