@@ -15,17 +15,15 @@ class HomeScreen extends StatelessWidget {
       child: SafeArea(child: Column(
         children: [
           Container(
-            color: lightGrey,
+            height:60,
+            color: Colors.red,
             child: TextFormField(
-              decoration:InputDecoration(
+              decoration:const InputDecoration(
                 // hintText: search,
-                prefixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide.none,
-                ),
+                suffixIcon: Icon(Icons.search),
                 filled: true,
-                fillColor: Colors.white,
+                fillColor:whiteColor,
+                hintText: searchanything,
               ),
             ),
           )
