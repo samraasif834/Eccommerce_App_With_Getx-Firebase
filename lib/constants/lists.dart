@@ -1,10 +1,9 @@
 import 'package:ecommerceappfirebase/constants/images.dart';
 
-
 const socialIconList = [
   icFacebookLogo,
   icGoogleLogo,
- icTwitterLogo,
- 
- 
+  icTwitterLogo,
 ];
+
+const brandsList = [imgSlider1, imgSlider2, imgSlider3, imgSlider4];
